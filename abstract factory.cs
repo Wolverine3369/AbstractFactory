@@ -16,53 +16,53 @@ namespace Wolverine
     // Concrete product for Modern furniture
     class Ford : ICar
     {
-        public void SitOn()
+        public void RideInWinter()
         {
-            Console.WriteLine("Sitting on a modern chair");
+            Console.WriteLine("I am the Ford and I was produced by the Ford factory! You can ride me even in winter.");
         }
     }
 
     class Dodge : ICar
     {
-        public void RelaxOn()
+        public void RideInWinter()
         {
-            Console.WriteLine("Relaxing on a modern sofa");
+            Console.WriteLine("I am the Dodge and I was produced by the Dodge factory! You can ride me even in winter.");
         }
     }
 
     // Concrete product for Victorian furniture
-    class VictorianChair : IChair
+    class Harley : IMotorcycle
     {
-        public void SitOn()
+        public void RideInSummer()
         {
-            Console.WriteLine("Sitting on a Victorian chair");
+            Console.WriteLine("I am the Harley and I was produced by the Harley factory! You can ride me only in summer.");
         }
     }
 
-    class VictorianSofa : ISofa
+    class Indian : IMotorcycle
     {
-        public void RelaxOn()
+        public void RideInSummer()
         {
-            Console.WriteLine("Relaxing on a Victorian sofa");
+            Console.WriteLine("I am the Indian and I was produced by the Idian factory! You can ride me only in summer.");
         }
     }
 
     // Abstract factory interface
-    interface IFurnitureFactory
+    interface ICarFactory
     {
-        IChair CreateChair();
-        ISofa CreateSofa();
+        ICar CreateCar();
+        IMotorcycle CreateMotorcycle();
     }
 
     // Concrete factory for Modern furniture
-    class ModernFurnitureFactory : IFurnitureFactory
+    class FordFactory : ICarFactory
     {
-        public IChair CreateChair()
+        public ICar CreateCar()
         {
-            return new ModernChair();
+            return new Ford();
         }
 
-        public ISofa CreateSofa()
+        public ICar CreateCar()
         {
             return new ModernSofa();
         }
