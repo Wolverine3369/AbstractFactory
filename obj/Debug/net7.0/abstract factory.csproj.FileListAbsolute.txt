@@ -1,0 +1,15 @@
+C:\Users\vlkma\abstract factory\bin\Debug\net7.0\abstract factory.exe
+C:\Users\vlkma\abstract factory\bin\Debug\net7.0\abstract factory.deps.json
+C:\Users\vlkma\abstract factory\bin\Debug\net7.0\abstract factory.runtimeconfig.json
+C:\Users\vlkma\abstract factory\bin\Debug\net7.0\abstract factory.dll
+C:\Users\vlkma\abstract factory\bin\Debug\net7.0\abstract factory.pdb
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.csproj.AssemblyReference.cache
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.AssemblyInfoInputs.cache
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.AssemblyInfo.cs
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.csproj.CoreCompileInputs.cache
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.dll
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\refint\abstract factory.dll
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.pdb
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\abstract factory.genruntimeconfig.cache
+C:\Users\vlkma\abstract factory\obj\Debug\net7.0\ref\abstract factory.dll
