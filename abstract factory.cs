@@ -50,21 +50,21 @@ namespace Wolverine
     // Abstract factory interface
     interface ICarFactory
     {
-        ICar CreateCar();
-        IMotorcycle CreateMotorcycle();
+        ICar Model2022();
+        ICar Model2023();
     }
 
     // Concrete factory for Modern furniture
     class FordFactory : ICarFactory
     {
-        public ICar CreateCar()
+        public ICar Model2022()
         {
             return new Ford();
         }
 
-        public ICar CreateCar()
+        public ICar Model2023()
         {
-            return new ModernSofa();
+            return new Ford();
         }
     }
 
