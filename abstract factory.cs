@@ -3,18 +3,18 @@ using System;
 namespace Wolverine
 {
     // Abstract product interfaces
-    interface IChair
+    interface ICar
     {
-        void SitOn();
+        void RideInWinter();
     }
 
-    interface ISofa
+    interface IMotorcycle
     {
-        void RelaxOn();
+        void RideInSummer();
     }
 
     // Concrete product for Modern furniture
-    class ModernChair : IChair
+    class Ford : ICar
     {
         public void SitOn()
         {
@@ -22,7 +22,7 @@ namespace Wolverine
         }
     }
 
-    class ModernSofa : ISofa
+    class Dodge : ICar
     {
         public void RelaxOn()
         {
