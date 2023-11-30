@@ -2,96 +2,89 @@ using System;
 
 namespace Wolverine
 {
-    // Abstract product interfaces
-    interface ICar
+    interface IConvertible
     {
-        void RideInWinter();
+        void Convertible();
     }
 
-    interface IMotorcycle
+    interface IPickup
     {
-        void RideInSummer();
+        void Pickup();
     }
 
-    // Concrete product for Modern furniture
-    class Ford : ICar
+    class Convertible : IConvertible
     {
-        public void RideInWinter()
+        public void Convertible()
         {
-            Console.WriteLine("I am the Ford and I was produced by the Ford factory! You can ride me even in winter.");
+            Console.WriteLine("I am a convertible! You can ride me only in summer.");
         }
     }
 
-    class Dodge : ICar
+    class Pickup : IPickup
     {
-        public void RideInWinter()
+        public void Pickup()
         {
-            Console.WriteLine("I am the Dodge and I was produced by the Dodge factory! You can ride me even in winter.");
+            Console.WriteLine("I am a pickup! You can ride me even in winter.");
         }
     }
 
-    // Concrete product for Victorian furniture
-    class Harley : IMotorcycle
+    class Dodge : IConvertible
     {
-        public void RideInSummer()
+        public void Convertible()
         {
-            Console.WriteLine("I am the Harley and I was produced by the Harley factory! You can ride me only in summer.");
+            Console.WriteLine("I am a convertible! You can ride me only in summer.");
         }
     }
 
-    class Indian : IMotorcycle
+    class Ford : IPickup
     {
-        public void RideInSummer()
+        public void Pickup()
         {
-            Console.WriteLine("I am the Indian and I was produced by the Idian factory! You can ride me only in summer.");
+            Console.WriteLine("I am a pickup! You can ride me even in winter.");
         }
     }
 
-    // Abstract factory interface
     interface ICarFactory
     {
-        ICar Model2022();
-        ICar Model2023();
+        IConvertible Convertible();
+        IPickup Pickup();
     }
 
-    // Concrete factory for Modern furniture
     class FordFactory : ICarFactory
     {
-        public ICar Model2022()
+        public IConvertible Convertible()
         {
             return new Ford();
         }
 
-        public ICar Model2023()
+        public IPickup Pickup()
         {
             return new Ford();
         }
     }
 
-    // Concrete factory for Victorian furniture
-    class VictorianFurnitureFactory : IFurnitureFactory
+    class DodgeFactory : ICarFactory
     {
-        public IChair CreateChair()
+        public IConvertible Convertible()
         {
-            return new VictorianChair();
+            return new Dodge();
         }
 
-        public ISofa CreateSofa()
+        public IPickup Pickup()
         {
-            return new VictorianSofa();
+            return new Dodge();
         }
     }
 
-    // Client class that uses the abstract factory
     class Client
     {
-        private IChair chair;
-        private ISofa sofa;
+        private IConvertible convertible;
+        private IPickup pickup;
 
-        public Client(IFurnitureFactory factory)
+        public Client(ICarFactory factory)
         {
-            chair = factory.CreateChair();
-            sofa = factory.CreateSofa();
+            convertible = factory.Convertible();
+            pickup = factory.Pickup();
         }
 
         public void UseFurniture()
