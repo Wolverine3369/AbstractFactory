@@ -4,43 +4,65 @@ namespace Wolverine
 {
     interface IConvertible
     {
-        void Convertible();
+        void ConvertibleModel2022();
+        void ConvertibleModel2023();
     }
 
     interface IPickup
     {
-        void Pickup();
+        void PickupModel2022();
+        void PickupModel2023();
     }
 
     class ConvertibleFord : IConvertible
     {
-        public void Convertible()
+        public void ConvertibleModel2022()
         {
-            Console.WriteLine("I am a convertible Ford and I was produced by the Ford Factory!");
+            Console.WriteLine("I am a convertible Ford model 2022 and I was produced by the Ford Factory!");
+        }
+
+        public void ConvertibleModel2023()
+        {
+            Console.WriteLine("I am a convertible Ford model 2023 and I was produced by the Ford Factory!");
         }
     }
 
     class PickupFord : IPickup
     {
-        public void Pickup()
+        public void PickupModel2022()
         {
-            Console.WriteLine("I am a pickup Ford and I was produced by the Ford Factory!");
+            Console.WriteLine("I am a pickup Ford model 2022 and I was produced by the Ford Factory!");
+        }
+
+        public void PickupModel2023()
+        {
+            Console.WriteLine("I am a pickup Ford model 2023 and I was produced by the Ford Factory!");
         }
     }
 
     class ConvertibleDodge : IConvertible
     {
-        public void Convertible()
+        public void ConvertibleModel2022()
         {
-            Console.WriteLine("I am a convertible Dodge and I was produced by the Dodge Factory!");
+            Console.WriteLine("I am a convertible Dodge model 2022 and I was produced by the Dodge Factory!");
+        }
+
+        public void ConvertibleModel2023()
+        {
+            Console.WriteLine("I am a convertible Dodge model 2023 and I was produced by the Dodge Factory!");
         }
     }
 
     class PickupDodge : IPickup
     {
-        public void Pickup()
+        public void PickupModel2022()
         {
-            Console.WriteLine("I am a pickup Dodge and I was produced by the Dodge Factory!");
+            Console.WriteLine("I am a pickup Dodge model 2022 and I was produced by the Dodge Factory!");
+        }
+
+        public void PickupModel2023()
+        {
+            Console.WriteLine("I am a pickup Dodge model 2023 and I was produced by the Dodge Factory!");
         }
     }
 
@@ -87,10 +109,24 @@ namespace Wolverine
             pickup = factory.Pickup();
         }
 
-        public void UseCar()
+        public void ConvertibleModel2022()
         {
-            convertible.Convertible();
-            pickup.Pickup();
+            convertible.ConvertibleModel2022();
+        }
+
+        public void ConvertibleModel2023()
+        {
+            convertible.ConvertibleModel2023();
+        }
+
+        public void PickupModel2022()
+        {
+            pickup.PickupModel2022();
+        }
+
+        public void PickupModel2023()
+        {
+            pickup.PickupModel2023();
         }
     }
 
@@ -99,12 +135,12 @@ namespace Wolverine
         static void Main()
         {
             ICarFactory FordFactory = new FordFactory();
-            Customer FordClient = new Customer(FordFactory);
-            FordClient.UseCar();
+            Customer FordCustomer = new Customer(FordFactory);
+            FordCustomer.ConvertibleModel2022();
 
             ICarFactory DodgeFactory = new DodgeFactory();
-            Customer DodgeClient = new Customer(DodgeFactory);
-            DodgeClient.UseCar();
+            Customer DodgeCustomer = new Customer(DodgeFactory);
+            DodgeCustomer.PickupModel2023();
         }
     }
 }
