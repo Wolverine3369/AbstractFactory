@@ -28,7 +28,7 @@ namespace Wolverine
         }
     }
 
-    class Dodge : IConvertible
+    class Dodge
     {
         public void DodgeCar()
         {
@@ -36,7 +36,7 @@ namespace Wolverine
         }
     }
 
-    class Ford : IConvertible
+    class Ford
     {
         public void FordCar()
         {
