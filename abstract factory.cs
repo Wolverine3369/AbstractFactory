@@ -12,7 +12,7 @@ namespace Wolverine
         void Pickup();
     }
 
-    class Convertible : IConvertible
+    class ConvertibleCar : IConvertible
     {
         public void Convertible()
         {
@@ -20,7 +20,7 @@ namespace Wolverine
         }
     }
 
-    class Pickup : IPickup
+    class PickupCar : IPickup
     {
         public void Pickup()
         {
