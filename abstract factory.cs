@@ -2,102 +2,95 @@ using System;
 
 namespace Wolverine
 {
-    // Abstract product interfaces
-    interface IChair
+    interface IConvertible
     {
-        void SitOn();
+        void RideConvertible();
     }
 
-    interface ISofa
+    interface IPickup
     {
-        void RelaxOn();
+        void RidePickup();
     }
 
-    // Concrete product for Modern furniture
-    class ModernChair : IChair
+    class ConvertibleDodge : IConvertible
     {
-        public void SitOn()
+        public void RideConvertible()
         {
-            Console.WriteLine("Sitting on a modern chair");
+            Console.WriteLine("I am a convertible Dodge! You can ride me only in summer.");
         }
     }
 
-    class ModernSofa : ISofa
+    class PickupDodge : IPickup
     {
-        public void RelaxOn()
+        public void RidePickup()
         {
-            Console.WriteLine("Relaxing on a modern sofa");
+            Console.WriteLine("I am a pickup Dodge! You can ride me even in winter.");
         }
     }
 
-    // Concrete product for Victorian furniture
-    class VictorianChair : IChair
+    class ConvertibleFord : IConvertible
     {
-        public void SitOn()
+        public void RideConvertible()
         {
-            Console.WriteLine("Sitting on a Victorian chair");
+            Console.WriteLine("I am a convertible Ford! You can ride me only in summer.");
         }
     }
 
-    class VictorianSofa : ISofa
+    class PickupFord : IPickup
     {
-        public void RelaxOn()
+        public void RidePickup()
         {
-            Console.WriteLine("Relaxing on a Victorian sofa");
+            Console.WriteLine("I am a pickup Ford! You can ride me even in winter.");
         }
     }
 
-    // Abstract factory interface
-    interface IFurnitureFactory
+    interface ICarFactory
     {
-        IChair CreateChair();
-        ISofa CreateSofa();
+        IConvertible Convertible();
+        IPickup Pickup();
     }
 
-    // Concrete factory for Modern furniture
-    class ModernFurnitureFactory : IFurnitureFactory
+    class FordFactory : ICarFactory
     {
-        public IChair CreateChair()
+        public IConvertible Convertible()
         {
-            return new ModernChair();
+            return new ConvertibleFord();
         }
 
-        public ISofa CreateSofa()
+        public IPickup Pickup()
         {
-            return new ModernSofa();
-        }
-    }
-
-    // Concrete factory for Victorian furniture
-    class VictorianFurnitureFactory : IFurnitureFactory
-    {
-        public IChair CreateChair()
-        {
-            return new VictorianChair();
-        }
-
-        public ISofa CreateSofa()
-        {
-            return new VictorianSofa();
+            return new PickupFord();
         }
     }
 
-    // Client class that uses the abstract factory
-    class Client
+    class DodgeFactory : ICarFactory
     {
-        private IChair chair;
-        private ISofa sofa;
-
-        public Client(IFurnitureFactory factory)
+        public IConvertible Convertible()
         {
-            chair = factory.CreateChair();
-            sofa = factory.CreateSofa();
+            return new ConvertibleDodge();
         }
 
-        public void UseFurniture()
+        public IPickup Pickup()
         {
-            chair.SitOn();
-            sofa.RelaxOn();
+            return new PickupDodge();
+        }
+    }
+
+    class Customer
+    {
+        private IConvertible convertible;
+        private IPickup pickup;
+
+        public Customer(ICarFactory factory)
+        {
+            convertible = factory.Convertible();
+            pickup = factory.Pickup();
+        }
+
+        public void UseCar()
+        {
+            convertible.RideConvertible();
+            pickup.RidePickup();
         }
     }
 
@@ -105,15 +98,13 @@ namespace Wolverine
     {
         static void Main()
         {
-            // Client uses Modern furniture
-            IFurnitureFactory modernFactory = new ModernFurnitureFactory();
-            Client modernClient = new Client(modernFactory);
-            modernClient.UseFurniture();
+            ICarFactory FordFactory = new FordFactory();
+            Customer FordClient = new Customer(FordFactory);
+            FordClient.UseCar();
 
-            // Client uses Victorian furniture
-            IFurnitureFactory victorianFactory = new VictorianFurnitureFactory();
-            Client victorianClient = new Client(victorianFactory);
-            victorianClient.UseFurniture();
+            ICarFactory DodgeFactory = new DodgeFactory();
+            Customer DodgeClient = new Customer(DodgeFactory);
+            DodgeClient.UseCar();
         }
     }
 }
