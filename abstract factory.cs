@@ -54,12 +54,12 @@ namespace Wolverine
     {
         public IConvertible Convertible()
         {
-            return new Ford();
+            return new ConvertibleFord();
         }
 
         public IPickup Pickup()
         {
-            return new Ford();
+            return new PickupFord();
         }
     }
 
@@ -67,12 +67,12 @@ namespace Wolverine
     {
         public IConvertible Convertible()
         {
-            return new Dodge();
+            return new ConvertibleDodge();
         }
 
         public IPickup Pickup()
         {
-            return new Dodge();
+            return new PickupDodge();
         }
     }
 
