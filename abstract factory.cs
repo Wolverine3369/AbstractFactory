@@ -16,7 +16,7 @@ namespace Wolverine
     {
         public void RideConvertible()
         {
-            Console.WriteLine("I am a convertible! You can ride me only in summer.");
+            Console.WriteLine("I am a convertible Dodge! You can ride me only in summer.");
         }
     }
 
@@ -24,7 +24,7 @@ namespace Wolverine
     {
         public void RidePickup()
         {
-            Console.WriteLine("I am a pickup! You can ride me even in winter.");
+            Console.WriteLine("I am a pickup Dodge! You can ride me even in winter.");
         }
     }
 
@@ -32,7 +32,7 @@ namespace Wolverine
     {
         public void RideConvertible()
         {
-            Console.WriteLine("I am a convertible! You can ride me only in summer.");
+            Console.WriteLine("I am a convertible Ford! You can ride me only in summer.");
         }
     }
 
@@ -40,7 +40,7 @@ namespace Wolverine
     {
         public void RidePickup()
         {
-            Console.WriteLine("I am a pickup! You can ride me even in winter.");
+            Console.WriteLine("I am a pickup Ford! You can ride me even in winter.");
         }
     }
 
@@ -102,9 +102,9 @@ namespace Wolverine
             Client FordClient = new Client(FordFactory);
             FordClient.UseCar();
 
-            //IFurnitureFactory victorianFactory = new VictorianFurnitureFactory();
-            //Client victorianClient = new Client(victorianFactory);
-            //victorianClient.UseFurniture();
+            ICarFactory DodgeFactory = new DodgeFactory();
+            Client DodgeClient = new Client(DodgeFactory);
+            DodgeClient.UseCar();
         }
     }
 }
