@@ -12,7 +12,7 @@ namespace Wolverine
         void RidePickup();
     }
 
-    class ConvertibleCar : IConvertible
+    class ConvertibleDodge : IConvertible
     {
         public void RideConvertible()
         {
@@ -20,7 +20,7 @@ namespace Wolverine
         }
     }
 
-    class PickupCar : IPickup
+    class PickupDodge : IPickup
     {
         public void RidePickup()
         {
@@ -28,19 +28,19 @@ namespace Wolverine
         }
     }
 
-    class Dodge
+    class ConvertibleFord : IConvertible
     {
-        public void DodgeCar()
+        public void RideConvertible()
         {
-            Console.WriteLine("I am the Dodge and I was produces be the Dodge factory!.");
+            Console.WriteLine("I am a convertible! You can ride me only in summer.");
         }
     }
 
-    class Ford
+    class PickupFord : IPickup
     {
-        public void FordCar()
+        public void RidePickup()
         {
-            Console.WriteLine("I am the Ford and I was produces be the Ford factory!.");
+            Console.WriteLine("I am a pickup! You can ride me even in winter.");
         }
     }
 
