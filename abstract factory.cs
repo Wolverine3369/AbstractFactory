@@ -4,43 +4,43 @@ namespace Wolverine
 {
     interface IConvertible
     {
-        void RideConvertible();
+        void Convertible();
     }
 
     interface IPickup
     {
-        void RidePickup();
-    }
-
-    class ConvertibleDodge : IConvertible
-    {
-        public void RideConvertible()
-        {
-            Console.WriteLine("I am a convertible Dodge! You can ride me only in summer.");
-        }
-    }
-
-    class PickupDodge : IPickup
-    {
-        public void RidePickup()
-        {
-            Console.WriteLine("I am a pickup Dodge! You can ride me even in winter.");
-        }
+        void Pickup();
     }
 
     class ConvertibleFord : IConvertible
     {
-        public void RideConvertible()
+        public void Convertible()
         {
-            Console.WriteLine("I am a convertible Ford! You can ride me only in summer.");
+            Console.WriteLine("I am a convertible Ford and I was produced by the Ford Factory!");
         }
     }
 
     class PickupFord : IPickup
     {
-        public void RidePickup()
+        public void Pickup()
         {
-            Console.WriteLine("I am a pickup Ford! You can ride me even in winter.");
+            Console.WriteLine("I am a pickup Ford and I was produced by the Ford Factory!");
+        }
+    }
+
+    class ConvertibleDodge : IConvertible
+    {
+        public void Convertible()
+        {
+            Console.WriteLine("I am a convertible Dodge and I was produced by the Dodge Factory!");
+        }
+    }
+
+    class PickupDodge : IPickup
+    {
+        public void Pickup()
+        {
+            Console.WriteLine("I am a pickup Dodge and I was produced by the Dodge Factory!");
         }
     }
 
@@ -89,8 +89,8 @@ namespace Wolverine
 
         public void UseCar()
         {
-            convertible.RideConvertible();
-            pickup.RidePickup();
+            convertible.Convertible();
+            pickup.Pickup();
         }
     }
 
