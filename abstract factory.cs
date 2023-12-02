@@ -76,12 +76,12 @@ namespace Wolverine
         }
     }
 
-    class Client
+    class Customer
     {
         private IConvertible convertible;
         private IPickup pickup;
 
-        public Client(ICarFactory factory)
+        public Customer(ICarFactory factory)
         {
             convertible = factory.Convertible();
             pickup = factory.Pickup();
@@ -99,11 +99,11 @@ namespace Wolverine
         static void Main()
         {
             ICarFactory FordFactory = new FordFactory();
-            Client FordClient = new Client(FordFactory);
+            Customer FordClient = new Customer(FordFactory);
             FordClient.UseCar();
 
             ICarFactory DodgeFactory = new DodgeFactory();
-            Client DodgeClient = new Client(DodgeFactory);
+            Customer DodgeClient = new Customer(DodgeFactory);
             DodgeClient.UseCar();
         }
     }
