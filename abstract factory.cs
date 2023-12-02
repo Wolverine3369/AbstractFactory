@@ -87,10 +87,10 @@ namespace Wolverine
             pickup = factory.Pickup();
         }
 
-        public void UseFurniture()
+        public void UseCar()
         {
-            chair.SitOn();
-            sofa.RelaxOn();
+            convertible.Convertible();
+            pickup.Pickup();
         }
     }
 
@@ -98,15 +98,13 @@ namespace Wolverine
     {
         static void Main()
         {
-            // Client uses Modern furniture
-            IFurnitureFactory modernFactory = new ModernFurnitureFactory();
-            Client modernClient = new Client(modernFactory);
-            modernClient.UseFurniture();
+            ICarFactory FordFactory = new FordFactory();
+            Client FordClient = new Client(FordFactory);
+            FordClient.UseCar();
 
-            // Client uses Victorian furniture
-            IFurnitureFactory victorianFactory = new VictorianFurnitureFactory();
-            Client victorianClient = new Client(victorianFactory);
-            victorianClient.UseFurniture();
+            //IFurnitureFactory victorianFactory = new VictorianFurnitureFactory();
+            //Client victorianClient = new Client(victorianFactory);
+            //victorianClient.UseFurniture();
         }
     }
 }
