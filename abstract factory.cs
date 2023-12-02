@@ -75,36 +75,14 @@ namespace Wolverine
             return new PickupDodge();
         }
     }
-
-    class Customer
-    {
-        private IConvertible convertible;
-        private IPickup pickup;
-
-        public Customer(ICarFactory factory)
-        {
-            convertible = factory.Convertible();
-            pickup = factory.Pickup();
-        }
-
-        public void UseCar()
-        {
-            convertible.Convertible();
-            pickup.Pickup();
-        }
-    }
-
+    
     class Program
     {
         static void Main()
         {
-            ICarFactory FordFactory = new FordFactory();
-            Customer FordClient = new Customer(FordFactory);
-            FordClient.UseCar();
-
             ICarFactory DodgeFactory = new DodgeFactory();
-            Customer DodgeClient = new Customer(DodgeFactory);
-            DodgeClient.UseCar();
+            IConvertible Dodge = DodgeFactory.Convertible();
+            Dodge.Convertible();
         }
     }
 }
