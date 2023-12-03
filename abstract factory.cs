@@ -137,6 +137,7 @@ namespace Wolverine
             ICarFactory FordFactory = new FordFactory();
             Customer FordCustomer = new Customer(FordFactory);
             FordCustomer.ConvertibleModel2022();
+            FordCustomer.PickupModel2023();
 
             ICarFactory DodgeFactory = new DodgeFactory();
             Customer DodgeCustomer = new Customer(DodgeFactory);
